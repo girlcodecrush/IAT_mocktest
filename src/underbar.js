@@ -27,6 +27,24 @@ var identity = _.reduce([5], function(total, number){
 var _ = {};
 _.reduce = function(collection, iterator, accumulator) {
   // your code here
+  if(Array.isArray(collection)){
+    if(accumulator === undefined){
+      accumulator = collection[0];
+      for(var i = 1 ; i < collection.length ; i++){
+        accumulator = iterator(accumulator, collection[i], i, collection);
+      }
+    }else {
+      for(var j = 0 ; j < collection.length ; j++){
+        accumulator = iterator(accumulator, collection[j], j, collection);
+      }
+    }
+    return accumulator; 
+  }else if(typeof collection === 'object'){
+    for(var key in collection){
+      accumulator = iterator(accumulator, collection[key], key, collection);
+    }
+  }
+  return accumulator; 
 };
 
 // keep this code for testing
