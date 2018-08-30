@@ -26,7 +26,12 @@ console.log(obj2); // --> {b: 4, c: 3}
 
 function extend(obj1, obj2) {
   // your code here
-  
+  for(var prop in obj2){
+    if(!obj1.hasOwnProperty(prop)){
+      obj1[prop] = obj2[prop];
+    }
+  }
+  return obj1; 
 }
 
 
