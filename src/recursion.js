@@ -20,10 +20,20 @@ console.log(output); // --> 55;
 
 var calculator = {
   fib : function fib(n) {
-
-  }
+  var cache = {};
+    if(n < 2){
+      return n; 
+    }else{
+      var saved1 = fib(n-1);
+      var saved2 = fib(n-2);
+      var result = saved1 + saved2 ; 
+      cache[n] = result; 
+    }
+    return result;  
+  } 
+   
 };
-
+fib(n);
 
 
 // keep this code for testing
