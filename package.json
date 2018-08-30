@@ -1,0 +1,17 @@
+{
+  "name": "im8-iat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha spec/*.test.js"
+  },
+  "author": "Code States",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "sinon": "^6.1.5"
+  }
+}
